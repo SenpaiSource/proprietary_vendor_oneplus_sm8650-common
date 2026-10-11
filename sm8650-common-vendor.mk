@@ -12,6 +12,7 @@ PRODUCT_COPY_FILES += \
     vendor/oneplus/sm8650-common/proprietary/odm/etc/init/init.oplus.sensor.rc:$(TARGET_COPY_OUT_ODM)/etc/init/init.oplus.sensor.rc \
     vendor/oneplus/sm8650-common/proprietary/odm/etc/init/init.oppo.reserve.rc:$(TARGET_COPY_OUT_ODM)/etc/init/init.oppo.reserve.rc \
     vendor/oneplus/sm8650-common/proprietary/odm/etc/init/init.touchDaemon.rc:$(TARGET_COPY_OUT_ODM)/etc/init/init.touchDaemon.rc \
+    vendor/oneplus/sm8650-common/proprietary/odm/etc/init/vendor-oplus-hardware-oplusSensor-V1-service.rc:$(TARGET_COPY_OUT_ODM)/etc/init/vendor-oplus-hardware-oplusSensor-V1-service.rc \
     vendor/oneplus/sm8650-common/proprietary/odm/etc/init/vendor-oplus-hardware-touch-V2-service.rc:$(TARGET_COPY_OUT_ODM)/etc/init/vendor-oplus-hardware-touch-V2-service.rc \
     vendor/oneplus/sm8650-common/proprietary/odm/etc/init/vendor.oplus.hardware.charger-V11-service.rc:$(TARGET_COPY_OUT_ODM)/etc/init/vendor.oplus.hardware.charger-V11-service.rc \
     vendor/oneplus/sm8650-common/proprietary/odm/etc/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_ODM)/etc/media_profiles_V1_0.xml \
@@ -759,6 +760,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.qccvndhal_aidl-service.xml \
     vendor.qti.qspmhal-service.xml \
     vendor.qti.qccsyshal_aidl-service.xml \
+    manifest_oplusSensor_aidl.xml \
     manifest_oplus_charger_aidl.xml \
     manifest_touch_aidl.xml \
     KmInstallKeybox \
@@ -845,6 +847,7 @@ PRODUCT_PACKAGES += \
     qccsyshal_aidl-service \
     wfdservice64 \
     gauged \
+    vendor-oplus-hardware-oplusSensor-V1-service \
     vendor-oplus-hardware-touch-V2-service \
     vendor.oplus.hardware.charger-V11-service \
     wlschgd \
@@ -886,7 +889,6 @@ PRODUCT_COPY_FILES += \
     vendor/oneplus/sm8650-common/proprietary/system/etc/permissions/uimremoteserver.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/uimremoteserver.xml \
     vendor/oneplus/sm8650-common/proprietary/system_ext/etc/dpm/dpm.conf:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/dpm/dpm.conf \
     vendor/oneplus/sm8650-common/proprietary/system_ext/etc/init/dpmd.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/dpmd.rc \
-    vendor/oneplus/sm8650-common/proprietary/system_ext/etc/init/tcmd.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/tcmd.rc \
     vendor/oneplus/sm8650-common/proprietary/system_ext/etc/permissions/com.qti.dpmframework.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.qti.dpmframework.xml \
     vendor/oneplus/sm8650-common/proprietary/system_ext/etc/permissions/dpmapi.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/dpmapi.xml \
     vendor/oneplus/sm8650-common/proprietary/system_ext/etc/permissions/qcrilhook.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/qcrilhook.xml \
@@ -896,7 +898,6 @@ PRODUCT_COPY_FILES += \
     vendor/oneplus/sm8650-common/proprietary/system_ext/etc/permissions/telephony_system-ext_privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/telephony_system-ext_privapp-permissions-qti.xml \
     vendor/oneplus/sm8650-common/proprietary/system_ext/etc/permissions/vendor.qti.imsdatachannel.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/vendor.qti.imsdatachannel.xml \
     vendor/oneplus/sm8650-common/proprietary/system_ext/etc/permissions/vendor.qti.imsdcservice.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/vendor.qti.imsdcservice.xml \
-    vendor/oneplus/sm8650-common/proprietary/system_ext/etc/seccomp_policy/tcmd.policy:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/seccomp_policy/tcmd.policy \
     vendor/oneplus/sm8650-common/proprietary/system_ext/etc/sysconfig/qti_telephony_system_packages_config.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/qti_telephony_system_packages_config.xml \
     vendor/oneplus/sm8650-common/proprietary/system_ext/etc/sysconfig/qti_whitelist_system_ext.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/qti_whitelist_system_ext.xml \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/O_STX_platform_license.pfm:$(TARGET_COPY_OUT_VENDOR)/etc/O_STX_platform_license.pfm \
@@ -999,7 +1000,6 @@ PRODUCT_COPY_FILES += \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/qcril_database/upgrade/other/0015_version_add_iccid_clir_pref_table.sql:$(TARGET_COPY_OUT_VENDOR)/etc/qcril_database/upgrade/other/0015_version_add_iccid_clir_pref_table.sql \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/sap.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sap.conf \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config \
-    vendor/oneplus/sm8650-common/proprietary/vendor/etc/seccomp_policy/atfwd@2.0.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/atfwd@2.0.policy \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/seccomp_policy/gnss@2.0-base.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/gnss@2.0-base.policy \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/seccomp_policy/gnss@2.0-edgnss-daemon.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/gnss@2.0-edgnss-daemon.policy \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/seccomp_policy/gnss@2.0-qsap-location.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/gnss@2.0-qsap-location.policy \
@@ -1210,8 +1210,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.mwqemadapteraidlservice-V1-ndk \
     vendor.qti.hardware.radio.am-V1-ndk \
     vendor.qti.hardware.radio.am@1.0 \
-    vendor.qti.hardware.radio.atcmdfwd@1.0 \
-    vendor.qti.hardware.radio.atfwd-V1-ndk \
     vendor.qti.hardware.radio.common-V1-ndk \
     vendor.qti.hardware.radio.ims-V12-ndk \
     vendor.qti.hardware.radio.ims@1.0 \
@@ -1360,7 +1358,6 @@ PRODUCT_PACKAGES += \
     android.hardware.gnss-aidl-service-qti.xml \
     android.hardware.radio.config.xml \
     android.hardware.secure_element.xml \
-    atfwd-saidl.xml \
     datafactoryservice-saidl.xml \
     deviceinfo-saidl.xml \
     dpm-saidl.xml \
@@ -1379,7 +1376,6 @@ PRODUCT_PACKAGES += \
     manifest_oplus_fingerprint_aidl_v3.xml \
     manifest_oplus_ifaa.xml \
     secure_element_omapi_service.xml \
-    ATFWD-daemon \
     adpl \
     cnd \
     dpmQmiMgr \
@@ -1412,7 +1408,6 @@ PRODUCT_PACKAGES += \
     xtra-daemon \
     xtwifi-client \
     dpmd \
-    tcmd \
     commcenterd \
     android.hardware.secure_element-service.qti \
     subsys_daemon \
